@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,10 +42,10 @@ Route::get('/productdetail', function () {
     return view('ecommerce.productdetail');
 });
 
-Route::get('/productlist', function () {
-    return view('ecommerce.productlist');
-});
+Route::get('/productlist',[SiteController::class, 'productList']);
 
 Route::get('/wishlist', function () {
     return view('ecommerce.wishlist');
 });
+
+Route::get('/orders',[SiteController::class, 'orders']);
